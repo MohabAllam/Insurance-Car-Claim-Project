@@ -2,6 +2,12 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from imblearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer, KNNImputer
+from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder
+from category_encoders import BinaryEncoder
+from sklearn.neighbors import KNeighborsClassifier
+from imblearn.over_sampling import  SMOTE
 
 st.set_page_config(layout= 'wide', page_title= 'Car Insurance Project')
 
@@ -54,3 +60,4 @@ if st.button('Predict'):
 
     else:
         st.write('Un Desired Customer')
+
